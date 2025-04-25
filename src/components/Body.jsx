@@ -21,8 +21,6 @@ const Body = () => {
     setListOfRestaurent(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredRestaurent(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
    }
-
-   console.log(filteredRestaurent)
    
 
    if(listOfRestaurents.length === 0){
@@ -41,7 +39,7 @@ const Body = () => {
                 }}
                 />
                 <button onClick={() => {
-                    console.log(searchText)
+                    
                     const filteredRes = listOfRestaurents.filter(res => {
                         return res.info.name.toLowerCase().includes(searchText.toLowerCase())
                     })
@@ -54,7 +52,7 @@ const Body = () => {
                 onClick={() => {const filtearedRes = listOfRestaurents.filter(res => {
                     return res.info.avgRating>4.4
                 } )
-                    console.log(filtearedRes)
+                    
                     setFilteredRestaurent(filtearedRes)
                 }
                 

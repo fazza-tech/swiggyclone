@@ -10,7 +10,7 @@ const Restaurentcard = (props) => {
         cloudinaryImageId
         }=resData?.info
 
-        console.log(resData)
+        
     return(
         <div className="res-card">
             <img className="res-logo" src={CDN_LINK+cloudinaryImageId} />
