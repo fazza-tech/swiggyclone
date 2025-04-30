@@ -12,10 +12,10 @@ const Restaurentcard = (props) => {
 
         
     return(
-        <div className="res-card">
-            <img className="res-logo" src={CDN_LINK+cloudinaryImageId} />
+        <div className=" rounded-lg w-[200px] bg-gray-50 m-4 p-4 hover:bg-gray-200 duration-400 ease-in-out">
+            <img className="rounded-lg" src={CDN_LINK+cloudinaryImageId} />
 
-            <h4>{name}</h4>
+            <h4 className="my-4 font-bold">{name}</h4>
             <div className="avg-container">
                 <img src={avgRatingSvg} alt="" />
                 <h4>{avgRating} {resData.info.sla.deliveryTime} mins</h4>

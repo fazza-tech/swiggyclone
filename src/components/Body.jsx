@@ -35,16 +35,16 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="search">
+            <div className="my-5 flex justify-center">
                 <input
                     type="text"
-                    className="input-search"
+                    className=" border border-gray-300 rounded focus:outline-green-200 mx-2"
                     value={searchText}
                     onChange={(e) => {
                         setSearchText(e.target.value)
                     }}
                 />
-                <button onClick={() => {
+                <button className="bg-green-200 px-4 py-0.5 rounded-2xl cursor-pointer" onClick={() => {
 
                     const filteredRes = listOfRestaurents.filter(res => {
                         return res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -53,8 +53,9 @@ const Body = () => {
 
                 }}>Search</button>
             </div>
-            <div className="filter">
-                <button
+            <div className="flex justify-center">
+                <button 
+                    
                     onClick={() => {
                         const filtearedRes = listOfRestaurents.filter(res => {
                             return res.info.avgRating > 4.4
@@ -64,9 +65,9 @@ const Body = () => {
                     }
 
                     }
-                    className="filter-button">Top rated restaurants</button>
+                    className="bg-amber-300 rounded px-4 cursor-pointer">Top rated restaurants</button>
             </div>
-            <div className="res-card-container">
+            <div className="flex flex-wrap">
                 {
                     filteredRestaurent.map((resList) => (
                         <Link

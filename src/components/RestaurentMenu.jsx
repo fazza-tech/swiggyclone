@@ -26,8 +26,8 @@ import useRestaurentMenu from "../utils/useRestaurentMenu"
 
   return (
     <div className="menu">
-        <h1>{name}</h1>
-        <h3>{cuisines?.join(",")}</h3>
+        <h1 class="text-3xl font-bold text-red-600">{name}</h1>
+        <h3 class="text-2xl text-red-500">{cuisines?.join(",")}</h3>
         <h3>{costForTwoMessage}</h3>
         <h2>Menu</h2>
         <ul>
