@@ -1,4 +1,10 @@
+
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
 @import "tailwindcss";
 
-
-
+@theme {
+    --font-primary:"Mea Culpa", cursive;
+    --font-gilroyB: "Gilroy-Bold", sans-serif;
+    --font-gilroyM: "Gilroy-Medium", sans-serif;
+  }

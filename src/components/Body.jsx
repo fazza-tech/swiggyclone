@@ -1,4 +1,4 @@
-import Restaurentcard from "./Restaurentcard"
+import Restaurentcard ,{VegLabel} from "./Restaurentcard"
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
 import { ALL_RESTAURENT } from "../utils/links"
@@ -6,12 +6,14 @@ import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 
 
+
 const Body = () => {
 
     const [listOfRestaurents, setListOfRestaurent] = useState([])
     const [filteredRestaurent, setFilteredRestaurent] = useState([])
     const [searchText, setSearchText] = useState("")
-
+    
+    const VegOnly = VegLabel(Restaurentcard)
 
 
     useEffect(() => {
@@ -31,6 +33,8 @@ const Body = () => {
     if (listOfRestaurents.length === 0) {
         return <Shimmer />
     }
+
+    
     
 
     return (
@@ -74,7 +78,8 @@ const Body = () => {
                             className="res-menu-click"
                             key={resList.info.id}
                             to={"/restaurants/" + resList.info.id}>
-                            <Restaurentcard resData={resList} />
+                            {resList.info.veg? <VegOnly resData={resList}/> : <Restaurentcard resData={resList} />}
+                            
                         </Link>))
                 }
             </div>
